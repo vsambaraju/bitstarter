@@ -6,7 +6,9 @@ fs.readFileSync(file,function(err,data){
 if(err){
     throw err;
 }
-content=buf.toString('utf8',0,data);
+buf=new Buffer(256);
+buf=data;
+content=buf.toString('utf8',0,buf.length);
 });
 
 var app = express();
